@@ -38,6 +38,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
+app.get('/login.js', function (req, res) {
+  res.send('hello');
+})
+
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
